@@ -22,18 +22,15 @@
 	<script>
 		function ready() {
 			return new Promise((resolve) => {
-				document.addEventListener('readystatechange', () => {
+
+				document.addEventListener('readystatechange', function() {
 					if (document.readyState !== "loading") resolve();
 				});
 			}).then(wrapperResolved);
-		}
-
-		/*
-		Don't forget to test your code!
-		Call wrapperResolved when the DOM is ready.
-		 */
-			ready();
-
+		};
+		
+		ready();
+		
 		// Just here for your testing
 		function wrapperResolved() {
 			var completion = document.querySelector('.completion');
